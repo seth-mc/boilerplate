@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev'
 
@@ -64,6 +65,10 @@ module.exports = {
           ]
         }
       }
+    }),
+    new HtmlWebpackPlugin({
+      template: './views/index.pug',
+      filename: 'index.html'
     })
   ],
 
@@ -123,6 +128,10 @@ module.exports = {
       test: /\.(glsl|frag|vert)$/,
       loader: 'glslify-loader',
       exclude: /node_modules/
+    },
+    {
+      test: /\.pug$/,
+      loader: 'pug-loader'
     }
 
     ]
