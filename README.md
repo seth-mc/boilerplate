@@ -18,7 +18,7 @@ Ensure that you have the following installed on your local machine:
 Clone the repo:
 
 ```sh
-git clone https://github.com/seth-mc/boilerplate.git
+git clone https://github.com/seth-mc/sethboilerplate.git
 ```
 
 Use npm to install the project dependencies:
